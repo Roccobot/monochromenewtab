@@ -51,7 +51,7 @@ follows your theme, so the eyedropper is the quickest way to match it.
 
 Monochrome New Tab collects no data. It asks for one permission, `storage`, to keep your two
 colors on your computer, and it has no access to the websites you visit and makes no network
-requests.
+requests. The full policy is in [PRIVACY.md](PRIVACY.md).
 
 ## Build the store package
 

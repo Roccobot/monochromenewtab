@@ -43,11 +43,11 @@ footer {
 }
 
 [data-mode="light"] .swatch {
-  background: var(--light, var(--default-light));
+  background: var(--light);
 }
 
 [data-mode="dark"] .swatch {
-  background: var(--dark, var(--default-dark));
+  background: var(--dark);
 }
 
 input[type="color"] {

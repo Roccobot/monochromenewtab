@@ -39,8 +39,9 @@ def main(args):
         print(f"version {want} matches version_name {manifest['version_name']}")
         return
     if manifest["version"] != want:
-        manifest["version"] = want
-        MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+        # Only the version line changes, so the hand-written layout of the manifest stays.
+        text = re.sub(r'("version":\s*)"[^"]*"', rf'\g<1>"{want}"', MANIFEST.read_text(), count=1)
+        MANIFEST.write_text(text)
     out = pathlib.Path(args[0]) if args else ROOT
     target = out / f"monochromenewtab-{manifest['version_name']}.zip"
     with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as archive:

@@ -55,28 +55,34 @@ fondo alla pagina.
 Solo il permesso **`storage`**, che non mostra avvisi all'installazione. Nessun accesso ai siti,
 nessuna rete, nessun dato raccolto: i colori restano in `chrome.storage.local` sul computer.
 
-- È una promessa scritta nel README e nelle opzioni, e lo sarà nella scheda dello store: un
-  permesso nuovo cambia la promessa e si chiede prima a Rocco.
+- È una promessa scritta nel README, nelle opzioni, in `PRIVACY.md` (l'indirizzo che la scheda
+  dello store dà come informativa) e nelle risposte sulla privacy dello store: un permesso nuovo
+  cambia la promessa, e si chiede prima a Rocco.
 
 ## 🎨 Il colore senza lampo
 
 La scheda nuova deve avere il colore giusto dal primo fotogramma.
 
-- **I colori predefiniti** vivono solo in `extension/defaults.css` (`--default-light` e
-  `--default-dark`); la scheda li dipinge senza script, le opzioni li leggono per 'Reset to
-  defaults', e `scripts/icons.py` li legge per le icone.
+- **I colori predefiniti** vivono solo in `Colors.defaults` dentro `extension/colors.js`; le
+  opzioni li leggono da lì per 'Reset to defaults', e `scripts/icons.py` li legge per le icone.
 - **I colori di Rocco**: `chrome.storage.local` è la fonte, ma è asincrona; per questo `colors.js`
-  ne tiene una copia in `localStorage`, che `paint.js` legge in modo sincrono in testa alla pagina,
-  prima del primo disegno. Poi la pagina si corregge dalla fonte e segue i cambi delle opzioni.
-- **Script classici, non moduli**: un modulo è differito e arriverebbe dopo il primo disegno.
-  Manifest V3 vieta gli script dentro la pagina, quindi sono file a parte; lo stile dentro la
-  pagina è invece consentito.
+  ne tiene una copia in `localStorage`, che legge in modo sincrono appena caricato, prima del primo
+  disegno, e scrive sempre `--light` e `--dark` sulla radice (la copia o i predefiniti). Poi la
+  pagina si corregge dalla fonte e segue i cambi delle opzioni.
+- **Un solo script, primo nella `<head>`, classico e non modulo**: un modulo è differito e
+  arriverebbe dopo il primo disegno. Manifest V3 vieta gli script dentro la pagina, quindi è un file
+  a parte; lo stile dentro la pagina è invece consentito, e la scheda lo tiene lì: nessun foglio di
+  stile da chiedere prima del primo fotogramma.
+- **Niente transizioni, niente `theme-color`**, `color-scheme` dichiarato, titolo fisso 'New Tab' e
+  un'icona volutamente rotta, così la scheda mostra quella del browser e non cambia icona.
+- **Il lampo che resta**: prima che la pagina arrivi, il browser riempie la scheda col suo sfondo.
+  Quello non dipende dall'estensione; in Vivaldi si può solo osservarlo (dalla 1.00).
 
 ## 🧪 Come si prova
 
 - **Il banco Playwright** (fuori dal repo, da rifare se serve) carica `extension/` in Chromium con
   `--load-extension` e controlla: apertura delle opzioni all'installazione, titolo, colori
-  predefiniti in chiaro e in scuro, salvataggio in `chrome.storage.local`, colore di una scheda
+  predefiniti in chiaro e in scuro, colore giusto prima che risponda la fonte, salvataggio in `chrome.storage.local`, colore di una scheda
   aperta che segue le opzioni, copia sincrona per il primo disegno, ripristino.
 - **Il collaudo di Rocco in Vivaldi** resta necessario: il passo 'Controlled by Extension', il
   fuoco nella barra degli indirizzi, il colore misurato contro la barra del suo tema, il passaggio

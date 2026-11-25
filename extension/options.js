@@ -2,12 +2,7 @@
 // EyeDropper API, a button that samples the screen. Every change is saved at once.
 // Author: Rocco Casadei, a.k.a. Roccobot
 const MODES = ["light", "dark"];
-const defaults = Object.fromEntries(
-  MODES.map((mode) => [
-    mode,
-    getComputedStyle(document.documentElement).getPropertyValue(`--default-${mode}`).trim(),
-  ]),
-);
+const defaults = Colors.defaults;
 const rows = Object.fromEntries(
   MODES.map((mode) => [mode, document.querySelector(`.color-row[data-mode="${mode}"]`)]),
 );

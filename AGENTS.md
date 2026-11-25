@@ -270,11 +270,11 @@ Un file più specifico vince **dove parla**, e il suo silenzio non è una deroga
   (`Rules.md` § '🔢 Versione').
 - **Solo il permesso `storage`**, nessun accesso ai siti, nessuna rete, nessun dato raccolto: è la
   promessa dello store e del README (`Rules.md` § '🔒 Permessi e privacy').
-- **Il colore va dipinto prima del primo fotogramma**: `colors.js` e `paint.js` sono script
-  classici in testa, la copia sincrona sta in `localStorage`, la fonte è `chrome.storage.local`
-  (`Rules.md` § '🎨 Il colore senza lampo').
-- **I colori predefiniti vivono solo in `extension/defaults.css`**: la pagina, le opzioni e
-  `scripts/icons.py` li leggono da lì (`Rules.md` § '🎨 Il colore senza lampo').
+- **Il colore va dipinto prima del primo fotogramma**: `colors.js` è l'unico script, classico e
+  primo nella `<head>`, lo stile della scheda è nella pagina, la copia sincrona vive in
+  `localStorage`, la fonte è `chrome.storage.local` (`Rules.md` § '🎨 Il colore senza lampo').
+- **I colori predefiniti vivono solo in `Colors.defaults` (`extension/colors.js`)**: le opzioni
+  e `scripts/icons.py` li leggono da lì (`Rules.md` § '🎨 Il colore senza lampo').
 - **Niente `theme-color`** nella scheda nuova: in Vivaldi cambierebbe l'accento del tema
   (`Rules.md` § '🧭 Che cos'è').
 - **UI e README in inglese**, i file di regole in italiano.
