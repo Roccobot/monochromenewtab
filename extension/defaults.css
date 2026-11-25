@@ -1,0 +1,8 @@
+/* The default colors, in one place: the new tab paints them before any script runs, and the
+   options page reads them back for 'Reset to defaults'.
+   Light: a soft neutral; dark: the toolbar of Rocco's 'Roccobot Dark' Vivaldi theme.
+   Author: Rocco Casadei, a.k.a. Roccobot */
+:root {
+  --default-light: #f6f6f6;
+  --default-dark: #0f0f0f;
+}

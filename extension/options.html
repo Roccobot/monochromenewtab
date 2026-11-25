@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monochrome New Tab</title>
+<link rel="stylesheet" href="defaults.css">
+<link rel="stylesheet" href="options.css">
+<script src="colors.js"></script>
+<script src="options.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>Monochrome New Tab</h1>
+  <p class="lead">Every new tab is a single flat color. Pick the color of your browser toolbar,
+    once for light mode and once for dark mode, and the new tab follows the mode by itself.</p>
+
+  <section aria-labelledby="colors-title">
+    <h2 id="colors-title">Colors</h2>
+    <div class="color-row" data-mode="light">
+      <span class="swatch" aria-hidden="true"></span>
+      <label for="light-hex">Light mode</label>
+      <input type="color" aria-label="Light mode color picker">
+      <input type="text" id="light-hex" spellcheck="false" autocomplete="off" maxlength="7">
+      <button type="button" class="eyedropper" hidden>Pick from screen</button>
+    </div>
+    <div class="color-row" data-mode="dark">
+      <span class="swatch" aria-hidden="true"></span>
+      <label for="dark-hex">Dark mode</label>
+      <input type="color" aria-label="Dark mode color picker">
+      <input type="text" id="dark-hex" spellcheck="false" autocomplete="off" maxlength="7">
+      <button type="button" class="eyedropper" hidden>Pick from screen</button>
+    </div>
+    <p class="hint" id="eyedropper-hint" hidden>'Pick from screen' turns the pointer into an
+      eyedropper: click the empty part of your toolbar to copy its exact color.</p>
+    <p class="actions">
+      <button type="button" id="reset">Reset to defaults</button>
+      <span id="status" role="status"></span>
+    </p>
+  </section>
+
+  <section aria-labelledby="vivaldi-title">
+    <h2 id="vivaldi-title">Vivaldi</h2>
+    <ol>
+      <li>Open Settings, then Tabs, then New Tab Page.</li>
+      <li>Choose <strong>Start Page</strong> and tick <strong>Controlled by Extension</strong>.
+        Without this step Vivaldi keeps showing its Speed Dial.</li>
+      <li>Leave <strong>Focus Page Content on New Tab</strong> off, so the address bar keeps the
+        cursor.</li>
+      <li>In Settings, Appearance, keep <strong>Website Appearance</strong> on
+        <strong>Auto</strong>: the new tab then switches between light and dark together with
+        your system.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="chrome-title">
+    <h2 id="chrome-title">Chrome</h2>
+    <p>The new tab changes as soon as the extension is installed. If Chrome asks whether to keep
+      the change, choose to keep it. Chrome's default toolbar is #ffffff in light mode and
+      #3c3c3c in dark mode. Chrome may add a footer with the extension name: right-click it to
+      hide it.</p>
+  </section>
+
+  <footer>
+    <p>Your colors stay on this computer. Nothing is collected or sent anywhere.</p>
+    <p>Version <span id="version"></span></p>
+  </footer>
+</main>
+</body>
+</html>

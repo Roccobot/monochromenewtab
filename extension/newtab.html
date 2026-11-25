@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<title>New Tab</title>
+<!-- A deliberately broken icon: the tab then shows the browser's own new tab icon. -->
+<link rel="icon" href="data:does-not-exist">
+<link rel="stylesheet" href="defaults.css">
+<style>
+  html {
+    height: 100%;
+    background: var(--light, var(--default-light));
+  }
+  @media (prefers-color-scheme: dark) {
+    html {
+      background: var(--dark, var(--default-dark));
+    }
+  }
+</style>
+<script src="colors.js"></script>
+<script src="paint.js"></script>
+</head>
+<body></body>
+</html>
