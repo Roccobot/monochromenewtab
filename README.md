@@ -5,7 +5,8 @@ so the empty page looks like part of the window. You pick one color for light mo
 dark mode, and the new tab follows the mode by itself.
 
 Made for Vivaldi first, and it works in Chrome and other Chromium browsers too. No search box, no
-shortcuts, no images: just the color.
+shortcuts, no images: just the color. The new tab uses a small dashed-square favicon, not the
+extension icon.
 
 ## Install
 

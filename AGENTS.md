@@ -277,6 +277,8 @@ Un file più specifico vince **dove parla**, e il suo silenzio non è una deroga
   e `scripts/icons.py` li leggono da lì (`Rules.md` § '🎨 Il colore senza lampo').
 - **Niente `theme-color`** nella scheda nuova: in Vivaldi cambierebbe l'accento del tema
   (`Rules.md` § '🧭 Che cos'è').
+- **La favicon della scheda** è `icons/blank-tab.svg` (un quadrato tratteggiato su griglia 16x16), non
+  l'icona dell'estensione (`Rules.md` § '🎨 Il colore senza lampo').
 - **UI e README in inglese**, i file di regole in italiano.
 - **Le prove**: il banco Playwright con l'estensione caricata, in chiaro e in scuro, e il collaudo
   di Rocco in Vivaldi (`Rules.md` § '🧪 Come si prova').

@@ -73,8 +73,12 @@ La scheda nuova deve avere il colore giusto dal primo fotogramma.
   arriverebbe dopo il primo disegno. Manifest V3 vieta gli script dentro la pagina, quindi è un file
   a parte; lo stile dentro la pagina è invece consentito, e la scheda lo tiene lì: nessun foglio di
   stile da chiedere prima del primo fotogramma.
-- **Niente transizioni, niente `theme-color`**, `color-scheme` dichiarato, titolo fisso 'New Tab' e
-  un'icona volutamente rotta, così la scheda mostra quella del browser e non cambia icona.
+- **Niente transizioni, niente `theme-color`**, `color-scheme` dichiarato, titolo fisso 'New Tab'.
+- **L'icona della scheda** è `extension/icons/blank-tab.svg`: un quadrato arrotondato tratteggiato,
+  disegnato su una griglia 16x16 (tratto 2, tre trattini per lato allineati ai pixel, angoli pieni
+  e arrotondati, colore `#808080`) così resta nitido a 16 e a 32. Parte dall'esempio di Rocco, ma
+  è un disegno nuovo, pensato per la favicon. Le icone dell'estensione (16, 32, 48 e 128) restano
+  quelle di `scripts/icons.py` e non si usano come favicon.
 - **Il lampo che resta**: prima che la pagina arrivi, il browser riempie la scheda col suo sfondo.
   Quello non dipende dall'estensione; in Vivaldi si può solo osservarlo (dalla 1.00).
 
