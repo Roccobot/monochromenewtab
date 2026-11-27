@@ -74,12 +74,15 @@ La scheda nuova deve avere il colore giusto dal primo fotogramma.
   a parte; lo stile dentro la pagina è invece consentito, e la scheda lo tiene lì: nessun foglio di
   stile da chiedere prima del primo fotogramma.
 - **Niente transizioni, niente `theme-color`**, `color-scheme` dichiarato, titolo fisso 'New Tab'.
-- **L'icona della scheda** è `extension/icons/blank-tab.svg`: un quadrato arrotondato fatto di
-  otto trattini della stessa lunghezza, quattro sugli angoli (archi) e quattro al centro dei lati,
-  su una griglia 16x16 con tratto 2,5 e bordo esterno allineato ai pixel, colore `#808080`
-  (dalla 1.02, chiesto da Rocco: tratto più spesso, trattini tutti uguali). Vivaldi la mostra
-  (collaudo di Rocco sulla 1.01). Le icone dell'estensione (16, 32, 48 e 128) restano quelle di
-  `scripts/icons.py` e non si usano come favicon.
+- **L'icona della scheda** è `extension/icons/blank-tab.svg`: un quadrato bianco (`#ffffff`)
+  arrotondato con otto trattini scuri (`#0f0f0f`) della stessa lunghezza, quattro dritti al centro
+  dei lati e quattro curvi sugli angoli. Griglia 16x16, tratto 2 coi bordi sui pixel interi, bordo
+  bianco di 1 px, trattini dei lati con gli estremi sui pixel (dalla 1.03, scelta di Rocco fra una
+  versione a pixel e questa curvilinea).
+- **Perché il fondo bianco**: Vivaldi disegna un alone bianco intorno ai pixel visibili della
+  favicon; col quadrato bianco l'alone si confonde col bordo dell'icona (collaudo di Rocco).
+  Vivaldi mostra la favicon della pagina (collaudo sulla 1.01). Le icone dell'estensione (16, 32,
+  48 e 128) restano quelle di `scripts/icons.py` e non si usano come favicon.
 - **Il lampo che resta**: prima che la pagina arrivi, il browser riempie la scheda col suo sfondo.
   Quello non dipende dall'estensione; in Vivaldi si può solo osservarlo (dalla 1.00).
 
