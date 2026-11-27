@@ -1,26 +1,13 @@
 <!--
-  New tab favicon: a dashed rounded square, drawn on a 16-unit grid so it stays sharp
-  at 16 and 32 px. Stroke 2, three dashes per side snapped to the grid, solid rounded
-  corners. Colour #808080, readable on both the light and the dark default tab.
+  New tab favicon: a rounded square drawn as eight dashes of the same length, four on the
+  corners (arcs) and four at the middle of the sides. 16-unit grid, stroke 2.5: the outer
+  edge sits on the pixel grid (1 to 15). Path length 41.708, so one dash plus one gap is
+  5.2135 (dash 3.4409, gap 1.7726); the offset centres a dash on each side middle.
+  Colour #808080, readable on both the light and the dark default tab.
   Author: Rocco Casadei, a.k.a. Roccobot
 -->
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <g fill="none" stroke="#808080" stroke-width="2" stroke-linecap="butt">
-    <path d="M2 4 A2 2 0 0 1 4 2"/>
-    <path d="M12 2 A2 2 0 0 1 14 4"/>
-    <path d="M14 12 A2 2 0 0 1 12 14"/>
-    <path d="M4 14 A2 2 0 0 1 2 12"/>
-    <path d="M4 2 H6"/>
-    <path d="M7 2 H9"/>
-    <path d="M10 2 H12"/>
-    <path d="M14 4 V6"/>
-    <path d="M14 7 V9"/>
-    <path d="M14 10 V12"/>
-    <path d="M12 14 H10"/>
-    <path d="M9 14 H7"/>
-    <path d="M6 14 H4"/>
-    <path d="M2 12 V10"/>
-    <path d="M2 9 V7"/>
-    <path d="M2 6 V4"/>
-  </g>
+  <path d="M8 2.25 H11.25 A2.5 2.5 0 0 1 13.75 4.75 V11.25 A2.5 2.5 0 0 1 11.25 13.75 H4.75 A2.5 2.5 0 0 1 2.25 11.25 V4.75 A2.5 2.5 0 0 1 4.75 2.25 Z"
+        fill="none" stroke="#808080" stroke-width="2.5"
+        stroke-dasharray="3.4409 1.7726" stroke-dashoffset="1.7204"/>
 </svg>
